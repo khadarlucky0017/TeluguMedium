@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button, Card, Grid, IconButton, Divider } from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -6,6 +7,12 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartPage = ({ cart, updateQuantity, removeFromCart }) => {
+
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
+      
   const navigate = useNavigate();
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
