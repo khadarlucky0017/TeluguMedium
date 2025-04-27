@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Grid, Paper, Typography, TextField, Button, Divider } from '@mui/material';
 
 const CheckoutPage = ({ cart, clearCart }) => {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
